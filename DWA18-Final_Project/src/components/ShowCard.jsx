@@ -1,5 +1,6 @@
 import './ShowCard.css'
-
+import { formalDate } from './utils/supabaseClient'
+ 
 /**
  * this function converts number value (less than 9) in an array to specified
  * string 
@@ -54,35 +55,6 @@ export const getStringedGenre = (array) =>{
  * @returns 
  */
 export const ShowCard = (props) => {
-   /**
-    * this function returns a stringed date
-    * 
-    */
-   
-    const formalDate =(date)=>{
-   
-   
-    const months =[
-   'January', 
-   'febuary', 
-   'March' , 
-   'April', 
-   'May', 
-   'June', 
-   'July', 
-   'August', 
-   'September', 
-   'October', 
-   'November', 
-   'December'
-]
-    const day = new Date(date).getDay()
-    const year = new Date(date).getFullYear()
-    const month = new Date(date).getMonth()
-    
-    const sentence =` ${day} ${months[month]}, ${year} `
-    return sentence
-}
 
 const genreList = props.genres && props.genres.map((genre, index) => <li key={index}>{genre}</li>);
 
@@ -95,11 +67,12 @@ const genreList = props.genres && props.genres.map((genre, index) => <li key={in
         <p className='line-clamp'>{props.description}</p>
         <p> Seasons: {props.seasons}</p> 
         <p>Updated:{formalDate(props.updated)}</p>
+        
         <div className='genres'>
           <p style={{marginRight:'4rem'}}>Genres:</p>
           <ul className='ul'>
-          {genreList}
-        </ul>
+            {genreList}
+          </ul>
         </div>
       </div>   
     </div>

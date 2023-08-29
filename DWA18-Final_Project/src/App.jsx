@@ -9,6 +9,7 @@ import React from "react";
 import { SeasonSection } from "./components/SeasonSection.jsx";
 import { ShowCard, getStringedGenre } from "./components/ShowCard.jsx";
 import closeImage from "./images/close.png";
+import { Carousel } from "./components/Carousel.jsx";
 import "./App.css";
 
 export const App = () => {
@@ -64,9 +65,7 @@ export const App = () => {
     const formData = new FormData(event.target); //grabs the data to be used to filter
     const data = Object.fromEntries(formData); //turns the formData into an object
     /**where the filtered data is stored */
-    const filter = showsPreview.filter((item) =>
-      item.title.trim().toLowerCase().includes(data.title.trim().toLowerCase())
-    );
+    const filter = showsPreview.filter((item) => item.title.trim().toLowerCase().includes(data.title.trim().toLowerCase()));
     setFilteredShows(filter);
     event.target.reset();
     setShowForm(true);
@@ -76,9 +75,7 @@ export const App = () => {
    * will order {@link filteredShows} titles from a to z
    */
   const aToZ = () => {
-    const sorted = [...filteredShows].toSorted((a, b) =>
-      a.title.localeCompare(b.title)
-    );
+    const sorted = [...filteredShows].toSorted((a, b) => a.title.localeCompare(b.title));
     setFilteredShows(sorted);
   };
   /**
@@ -223,7 +220,8 @@ export const App = () => {
           </header>
 
           {isLoading && <div>Loading...</div>}
-          {isFiltered && (
+          {/* {!isFiltered && !isLoading && <Carousel showsPreview={showsPreview}/>} */}
+          {isFiltered && <>
             <div className="genre_header">
               <Button variant="content" onClick={aToZ}>
                 A-Z
@@ -239,7 +237,7 @@ export const App = () => {
               </Button>
               {genreButtons}
             </div>
-          )}
+          </>}
 
           <div className="shows_holder">
             {filteredShows.length === 0 && (

@@ -27,7 +27,7 @@ Welcome to **My Podcast App**! This is your go-to destination for all things pod
 
 Download My Podcast App today and start exploring the world of podcasts like never before. Whether you're into true crime, science, self-help, or comedy, there's something for everyone in the podcasting world, and it's all at your fingertips with My Podcast App.
 
-[Download Now](#) (https://gentle-cupcake-a286f3.netlify.app)
+[Download Now](#) (my-podcast-app.netlify.app)
 
 Happy listening!
 

@@ -120,7 +120,7 @@ export const SeasonSection =(props)=>{
     setIndividualSeasonSelected(true)
   }
 
-  /**removes row from the subabase table the id is the subase unique id given by default */
+  /**removes row from the supabase table. The id is the supabase unique id given by default */
   const removeFavourite = async(id)=>{
     try {
       const { data, error } = await supabase

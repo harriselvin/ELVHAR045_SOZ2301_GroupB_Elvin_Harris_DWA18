@@ -69,7 +69,7 @@ const genreList = props.genres && props.genres.map((genre, index) => <li key={in
         <p>Updated:{formalDate(props.updated)}</p>
         
         <div className='genres'>
-          <p style={{marginRight:'4rem'}}>Genres:</p>
+          <p>Genres:</p>
           <ul className='ul'>
             {genreList}
           </ul>

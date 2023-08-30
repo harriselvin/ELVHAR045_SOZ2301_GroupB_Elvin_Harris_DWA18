@@ -23,6 +23,7 @@ export const App = () => {
   const [getSeasonId, setGetSeasonId] = React.useState([{}]);
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [audio, setAudio] = React.useState("");
+  
   React.useEffect(() => {
     const getShowPreviewData = async () => {
       try {
@@ -64,6 +65,7 @@ export const App = () => {
     event.preventDefault(); //stops the form from resetting
     const formData = new FormData(event.target); //grabs the data to be used to filter
     const data = Object.fromEntries(formData); //turns the formData into an object
+
     /**where the filtered data is stored */
     const filter = showsPreview.filter((item) => item.title.trim().toLowerCase().includes(data.title.trim().toLowerCase()));
     setFilteredShows(filter);
@@ -71,6 +73,7 @@ export const App = () => {
     setShowForm(true);
     setIsFiltered(true);
   };
+  
   /**
    * will order {@link filteredShows} titles from a to z
    */
@@ -125,6 +128,7 @@ export const App = () => {
   };
 
   const closeAudio = () => {
+    alert('You are about to close audio')
     setIsPlaying(false);
   };
   /**

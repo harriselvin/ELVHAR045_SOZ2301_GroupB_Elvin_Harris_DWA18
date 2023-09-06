@@ -1,8 +1,5 @@
 # My Podcast App
 
-![JavaScript](style=for-the-badge&logo=Javascript&logoColor=black)
-
-
 Welcome to **My Podcast App**! This is your go-to destination for all things podcasts. Whether you're a seasoned podcast enthusiast or just getting started, we've got you covered. Discover, listen, and manage your favourite podcasts with ease.
 
 ## Features
